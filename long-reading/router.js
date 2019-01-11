@@ -1,8 +1,8 @@
-function route(handle, pathname, response, postData) {
+function route(handle, pathname, response, request) {
   /* eslint-disable-next-line */
   console.log('About to route a request for ' + pathname);
   if(typeof handle[pathname] === 'function') {
-    return handle[pathname](response, postData);
+    return handle[pathname](response, request);
   } else {
     /* eslint-disable-next-line */
     console.log('No request handler found for ' + pathname);
